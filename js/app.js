@@ -32,17 +32,20 @@ const navbar = document.getElementById("navbar__list");
  * @param {HTMLElement} element 
  * @returns {boolean}
  */
-function isInViewport(element) {
-    var rect = element.getBoundingClientRect();
-    var html = document.documentElement;
 
+function isInViewport(element) {
+    let bounding = element.getBoundingClientRect();
     return (
-        rect.top + 200 >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || html.clientHeight) &&
-        rect.right <= (window.innerWidth || html.clientWidth)
+      bounding.top  <= 50 &&
+      bounding.bottom  <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <=
+        (window.innerWidth || document.documentElement.clientWidth)
     );
 }
+
+
+
 
 
 /**
@@ -75,6 +78,7 @@ function generateNav() {
 
 // Add class 'active' to section when near top of viewport
 function setActiveSection() {
+
     sections.forEach(section => {
         if (isInViewport(section) && !section.classList.contains('active')) {
             section.classList.add('active');
@@ -97,7 +101,7 @@ function scrollToSection(event) {
     if (target.nodeName == "A") {
         let section = document.getElementById(sectionId);
         window.scrollTo({ 
-            top: section.getBoundingClientRect().top + window.scrollY - 100,
+            top: section.getBoundingClientRect().top + window.scrollY - 20,
             behavior: 'smooth' 
         });
     }
@@ -117,4 +121,5 @@ navbar.addEventListener("click", scrollToSection);
 
 // Set sections as active
 window.addEventListener('scroll', setActiveSection);
+window.addEventListener("touchmove", setActiveSection);
 
