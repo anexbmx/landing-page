@@ -90,7 +90,7 @@ function setActiveSection() {
 // Scroll to anchor ID using scrollTO event
 /**
  * @description scroll to the appropriate section of the page
- * @param {Event} element 
+ * @param {Event} event 
  */
 function scrollToSection(event) {
     let target = event.target;
@@ -118,5 +118,4 @@ navbar.addEventListener("click", scrollToSection);
 
 // Set sections as active
 window.addEventListener('scroll', setActiveSection);
-window.addEventListener("touchmove", setActiveSection);
 
