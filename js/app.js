@@ -32,8 +32,6 @@ const navbar = document.getElementById("navbar__list");
  * @param {HTMLElement} element 
  * @returns {boolean}
  */
-
-
 function isInViewport(element) {
     const bounding = element.getBoundingClientRect();
     return (
