@@ -5,12 +5,11 @@
     background-color: #f44336;
 }
 
-#navbar__list .nav-item {
-    padding: 16px 16px;
-}
 
 #navbar__list .nav-item a {
     color: #fff;
     text-decoration: none;
     cursor: pointer;
+    padding: 16px 16px;
+    display: block;
 }

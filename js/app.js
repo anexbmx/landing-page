@@ -33,14 +33,11 @@ const navbar = document.getElementById("navbar__list");
  * @returns {boolean}
  */
 
+
 function isInViewport(element) {
     let bounding = element.getBoundingClientRect();
     return (
-      bounding.top  <= 50 &&
-      bounding.bottom  <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      bounding.right <=
-        (window.innerWidth || document.documentElement.clientWidth)
+      (bounding.top  <= 100 && bounding.bottom  >= 100) 
     );
 }
 
