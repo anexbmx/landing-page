@@ -1,0 +1,16 @@
+#navbar__list {
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding-left: 20px;
+    background-color: #f44336;
+}
+
+#navbar__list .nav-item {
+    padding: 16px 16px;
+}
+
+#navbar__list .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
