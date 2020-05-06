@@ -65,7 +65,8 @@ generateNav = () => {
 
         // TODO: add 'data-anchor' attribute, used when want to to scroll to the right section
         anchorElement.setAttribute("data-anchor", section.id);
-        // other option to Scroll to anchor ID
+
+        // TODO: other option to Scroll to anchor ID without using JS
         // anchorElement.setAttribute("href", "#"+section.id);
         anchorElement.textContent = section.getAttribute("data-nav");
 
