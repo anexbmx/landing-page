@@ -77,11 +77,11 @@ function generateNav() {
 function setActiveSection() {
 
     sections.forEach(section => {
-        if (isInViewport(section) && !section.classList.contains('active')) {
-            section.classList.add('active');
+        if (isInViewport(section) && !section.classList.contains('your-active-class')) {
+            section.classList.add('your-active-class');
             this.console.log(section.id + ' is in the viewport');
-        } else if (!isInViewport(section) && section.classList.contains('active')) {
-            section.classList.remove('active');
+        } else if (!isInViewport(section) && section.classList.contains('your-active-class')) {
+            section.classList.remove('your-active-class');
             this.console.log(section.id + ' is in not the viewport');
         }
     });
