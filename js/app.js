@@ -98,7 +98,7 @@ function scrollToSection(event) {
     if (target.nodeName == "A") {
         let section = document.getElementById(sectionId);
         window.scrollTo({ 
-            top: section.getBoundingClientRect().top + window.scrollY - 20,
+            top: section.getBoundingClientRect().top + window.scrollY - 60,
             behavior: 'smooth' 
         });
     }
