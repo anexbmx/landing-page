@@ -35,7 +35,7 @@ const navbar = document.getElementById("navbar__list");
 
 
 function isInViewport(element) {
-    let bounding = element.getBoundingClientRect();
+    const bounding = element.getBoundingClientRect();
     return (
       (bounding.top  <= 100 && bounding.bottom  >= 100) 
     );
@@ -52,19 +52,21 @@ function isInViewport(element) {
 */
 
 // build the nav
-function generateNav() {
-    let documentFragment = document.createDocumentFragment();
+generateNav = () => {
+    const documentFragment = document.createDocumentFragment();
 
     sections.forEach((section) => {
         // TODO: create li element
-        let liElement = document.createElement("li");
+        const liElement = document.createElement("li");
         liElement.classList.add('nav-item');
 
         // TODO: create Anchor element
-        let anchorElement = document.createElement("a");
+        const anchorElement = document.createElement("a");
 
         // TODO: add 'data-anchor' attribute, used when want to to scroll to the right section
         anchorElement.setAttribute("data-anchor", section.id);
+        // other option to Scroll to anchor ID
+        // anchorElement.setAttribute("href", "#"+section.id);
         anchorElement.textContent = section.getAttribute("data-nav");
 
         liElement.appendChild(anchorElement);
@@ -79,10 +81,8 @@ function setActiveSection() {
     sections.forEach(section => {
         if (isInViewport(section) && !section.classList.contains('your-active-class')) {
             section.classList.add('your-active-class');
-            this.console.log(section.id + ' is in the viewport');
         } else if (!isInViewport(section) && section.classList.contains('your-active-class')) {
             section.classList.remove('your-active-class');
-            this.console.log(section.id + ' is in not the viewport');
         }
     });
 }
@@ -93,10 +93,10 @@ function setActiveSection() {
  * @param {Event} event 
  */
 function scrollToSection(event) {
-    let target = event.target;
-    let sectionId = target.getAttribute('data-anchor');
+    const target = event.target;
+    const sectionId = target.getAttribute('data-anchor');
     if (target.nodeName == "A") {
-        let section = document.getElementById(sectionId);
+        const section = document.getElementById(sectionId);
         window.scrollTo({ 
             top: section.getBoundingClientRect().top + window.scrollY - 60,
             behavior: 'smooth' 
